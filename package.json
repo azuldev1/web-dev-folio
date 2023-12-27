@@ -21,10 +21,12 @@
 		"@smui/banner": "7.0.0-beta.15",
 		"@smui/button": "7.0.0-beta.15",
 		"@smui/icon-button": "7.0.0-beta.15",
+		"@smui/layout-grid": "7.0.0-beta.15",
 		"@smui/top-app-bar": "7.0.0-beta.15",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@types/three": "^0.160.0",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
 		"color-palette": "link:@material/theme/color-palette",
@@ -42,6 +44,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"gsap": "^3.12.4"
+		"gsap": "^3.12.4",
+		"three": "^0.160.0"
 	}
 }

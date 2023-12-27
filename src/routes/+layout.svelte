@@ -5,7 +5,6 @@
 
 	let prominent = false;
 	let dense = false;
-	let secondaryColor = false;
 </script>
 
 <div class="flexy">
@@ -28,34 +27,32 @@
 				</Section>
 			</Row>
 		</TopAppBar>
-		<div class="flexor-content">
-			<slot />
-		</div>
+	</div>
+	<div class="flexor-content">
+		<slot />
 	</div>
 </div>
 
 <style>
 	:global(body) {
+		padding: 10px;
 		background-color: none !important;
 		/* diameter of the circle */
 		--d: 2px;
 
 		background: radial-gradient(
 				circle at var(--d) var(--d),
-				#696969 calc(var(--d) - 5px),
+				#242424 calc(var(--d) - 5px),
 				#ffffff var(--d)
 			)
 			0 0 / 40px 40px;
 	}
 	:global(.transparent-bar) {
 		background-color: transparent !important;
-		width: 100%;
-		height: 100%;
-		z-index: -10;
+		overflow: auto;
 	}
 	.top-app-bar-container {
 		width: 100%;
-		height: 320px;
 		overflow: auto;
 		display: inline-block;
 	}
@@ -77,8 +74,6 @@
 	}
 
 	.flexor-content {
-		flex-basis: 0;
-		height: 0;
 		flex-grow: 1;
 		overflow: auto;
 		margin: 4px 12px;

@@ -1,12 +1,14 @@
 <script>
-	export let size = '24';
-	export let color = 'currentColor';
+	export let width = 55; // Default width
+	export let height = 55; // Default height
 </script>
 
 <svg
 	id="Layer_2"
 	data-name="Layer 2"
 	xmlns="http://www.w3.org/2000/svg"
+	{width}
+	{height}
 	viewBox="0 0 40.637 38.491"
 >
 	<defs>
@@ -44,7 +46,7 @@
 
 <style>
 	.cls-3 {
-		fill: var(--secondary);
+		fill: var(--on-primary);
 		stroke-width: 0px;
 	}
 	.cls-1 {
@@ -54,7 +56,7 @@
 	.cls-1,
 	.cls-2 {
 		fill: none;
-		stroke: var(--secondary);
+		stroke: var(--on-primary);
 		stroke-miterlimit: 10;
 	}
 
