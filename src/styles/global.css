@@ -1,0 +1,7 @@
+@import "@material/layout-grid/dist/mdc.layout-grid";
+@tailwind utilities;
+
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}

@@ -2,6 +2,7 @@
 	import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
 	import IconButton from '@smui/icon-button';
 	import Weblogo from '$lib/components/WebLogo.svelte';
+	import '../styles/global.css';
 
 	let prominent = false;
 	let dense = false;
