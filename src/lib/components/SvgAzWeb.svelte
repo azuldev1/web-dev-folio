@@ -11,10 +11,6 @@
 	{height}
 	viewBox="0 0 40.637 38.491"
 >
-	<defs>
-		<style>
-		</style>
-	</defs>
 	<g id="outline">
 		<path
 			id="outline-2"

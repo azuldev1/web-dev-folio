@@ -22,7 +22,6 @@
 		"@smui/button": "7.0.0-beta.15",
 		"@smui/common": "7.0.0-beta.16",
 		"@smui/icon-button": "7.0.0-beta.15",
-		"@smui/layout-grid": "7.0.0-beta.15",
 		"@smui/top-app-bar": "7.0.0-beta.15",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",

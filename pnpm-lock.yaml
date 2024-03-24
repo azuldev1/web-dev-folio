@@ -40,9 +40,6 @@ devDependencies:
   '@smui/icon-button':
     specifier: 7.0.0-beta.15
     version: 7.0.0-beta.15(svelte@4.2.7)(typescript@5.0.2)
-  '@smui/layout-grid':
-    specifier: 7.0.0-beta.15
-    version: 7.0.0-beta.15(svelte@4.2.7)(typescript@5.0.2)
   '@smui/top-app-bar':
     specifier: 7.0.0-beta.15
     version: 7.0.0-beta.15(svelte@4.2.7)(typescript@5.0.2)
@@ -518,12 +515,6 @@ packages:
       tslib: 2.4.1
     dev: true
 
-  /@material/layout-grid@14.0.0:
-    resolution: {integrity: sha512-tAce0PR/c85VI2gf1HUdM0Y15ZWpfZWAFIwaCRW1+jnOLWnG1/aOJYLlzqtVEv2m0TS1R1WRRGN3Or+CWvpDRA==}
-    dependencies:
-      tslib: 2.4.1
-    dev: true
-
   /@material/ripple@14.0.0:
     resolution: {integrity: sha512-9XoGBFd5JhFgELgW7pqtiLy+CnCIcV2s9cQ2BWbOQeA8faX9UZIDUx/g76nHLZ7UzKFtsULJxZTwORmsEt2zvw==}
     dependencies:
@@ -784,17 +775,6 @@ packages:
       '@material/icon-button': 14.0.0
       '@smui/common': 7.0.0-beta.16(svelte@4.2.7)(typescript@5.0.2)
       '@smui/ripple': 7.0.0-beta.16(svelte@4.2.7)(typescript@5.0.2)
-      svelte2tsx: 0.6.27(svelte@4.2.7)(typescript@5.0.2)
-    transitivePeerDependencies:
-      - svelte
-      - typescript
-    dev: true
-
-  /@smui/layout-grid@7.0.0-beta.15(svelte@4.2.7)(typescript@5.0.2):
-    resolution: {integrity: sha512-E7zfbccpnC8PRSNyZfPEJd+ZCaROjZOGoB8h5Wz7by+9TIJr45nPugRA76d28M6Zv+Aqv/Pulza1NM0PTJI97A==}
-    dependencies:
-      '@material/layout-grid': 14.0.0
-      '@smui/common': 7.0.0-beta.16(svelte@4.2.7)(typescript@5.0.2)
       svelte2tsx: 0.6.27(svelte@4.2.7)(typescript@5.0.2)
     transitivePeerDependencies:
       - svelte

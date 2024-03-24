@@ -1,7 +1,7 @@
 <script lang="ts">
 	import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
 	import IconButton from '@smui/icon-button';
-	import Weblogo from '$lib/components/WebLogo.svelte';
+	import Weblogo from '$lib/components/SvgAzWeb.svelte';
 	import '../styles/global.css';
 
 	let prominent = false;
@@ -76,7 +76,7 @@
 
 	.flexor-content {
 		flex-grow: 1;
-		overflow: auto;
-		margin: 4px 12px;
+		margin: 18px 12px;
+		height: 100%;
 	}
 </style>
