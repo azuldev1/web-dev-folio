@@ -27,10 +27,10 @@
 		padding: 12px;
 		border-top-left-radius: 4px;
 		border-top-right-radius: 4px;
-		display: inline-flex;
+		display: flex;
 	}
 	:global(.header *) {
-		display: inline-block !important;
+		display: flex !important;
 	}
 	:global(.header .material-icons) {
 		padding-right: 0.5em;
