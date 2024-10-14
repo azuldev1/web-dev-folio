@@ -8,6 +8,9 @@ export default {
         '28': '7rem',
         '32': '8rem', 
       },
+        fontSize: {
+        '6xl': '3.75rem',  // or any size you want
+      }      
     },
   },
   plugins: [],
