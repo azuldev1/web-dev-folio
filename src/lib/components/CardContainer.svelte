@@ -4,42 +4,57 @@
 	const cards = [
 		{
 			icon: 'web',
-			title: 'Designer',
+			title: 'Frontend Skills & Tools',
 			description:
-				'I value simple content structure, clean design patterns, and thoughtful interactions.',
+				'I prioritize choosing the best solution for each project, whether it’s building custom features from scratch or utilizing robust libraries to streamline development.',
 			sections: [
 				{
-					heading: 'Things I enjoy designing:',
-					items: ['UX', 'UI', 'Web', 'Apps', 'Logos']
+					heading: 'Core Skills:',
+					itemsInline: ['Javascript', 'CSS', 'HTML', 'Git', 'Wireframes']
 				},
 				{
-					heading: 'Design Tools:',
-					items: ['Affinity Designer', 'Figma', 'Pen & Paper', 'Sketch']
+					heading: 'Toolset:',
+					items: [
+						'React',
+						'Vue',
+						'Svelete',
+						'Next JS',
+						'Nuxt Js',
+						'Sass',
+						'Styled Components',
+						'Webpack',
+						'React Context API',
+						'Storybook',
+						'Figma'
+					]
 				}
 			]
 		},
 		{
 			icon: 'web',
-			title: 'Frontend Developer',
+			title: 'Backend Skills & Tools',
 			description:
-				'I like to code things from scratch, and enjoy bringing ideas to life in the browser.',
+				'Bridging front and backend: Delivering engaging front-end experiences with a deep understanding of REST APIs and GraphQL.',
 			sections: [
 				{
-					heading: 'Languages I speak:',
-					items: ['HTML', 'Pug', 'Slim', 'CSS', 'Sass', 'Git']
+					heading: 'Core Skills:',
+					itemsInline: ['Node.js', 'SQL', 'NoSQL', 'GraphQL API', 'AWS', 'Docker']
 				},
 				{
-					heading: 'Dev Tools:',
+					heading: 'Toolset:',
 					items: [
-						'Astro JS',
-						'Bitbucket',
-						'Bootstrap',
-						'Bulma',
-						'Codekit',
-						'Github',
-						'Netlify',
-						'Tailwind CSS',
-						'VS Code'
+						'Express js',
+						'REST APIs Architecture',
+						'Postman',
+						'Mongoose',
+						'GraphQL',
+						'Apollo',
+						'PostgreSQL',
+						'Sequelize',
+						'pgAdmin',
+						'Gitlab CI/CD',
+						'Lambda Functions',
+						'Docker Containerization'
 					]
 				}
 			]
@@ -47,7 +62,6 @@
 	];
 
 	export let isSet = true;
-	$: moreThanTwo = cards.length > 2;
 </script>
 
 <div class={`card-container ${isSet ? 'border-2 border-gray-400' : ''}`}>

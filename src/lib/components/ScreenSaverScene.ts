@@ -53,7 +53,7 @@ if (browser) {
 
     // Sphere setup
     const sphereRadius: number = Math.min(window.innerWidth, window.innerHeight) * 0.03;
-    const sphereGeometry: THREE.SphereGeometry = new THREE.SphereGeometry(sphereRadius, 32, 32);
+    const sphereGeometry: THREE.SphereGeometry = new THREE.SphereGeometry(sphereRadius, 16, 16);
     const sphere: MovableObject = new MovableObject(
         sphereGeometry,
         material,
@@ -65,7 +65,7 @@ if (browser) {
     sphere.addToScene(scene);
 
     // TorusKnot
-const torusKnotGeometry: THREE.TorusKnotGeometry = new THREE.TorusKnotGeometry(20, 3, 60, 16);
+const torusKnotGeometry: THREE.TorusKnotGeometry = new THREE.TorusKnotGeometry(20, 3, 30, 16);
 const torusKnot: MovableObject = new MovableObject(
   torusKnotGeometry,
   material,
@@ -77,7 +77,7 @@ const torusKnot: MovableObject = new MovableObject(
 torusKnot.addToScene(scene);
 
 // Torus
-const torusGeometry: THREE.TorusGeometry = new THREE.TorusGeometry(15, 3, 16, 50);
+const torusGeometry: THREE.TorusGeometry = new THREE.TorusGeometry(15, 3, 8, 25);
 const torus: MovableObject = new MovableObject(
   torusGeometry,
   material,

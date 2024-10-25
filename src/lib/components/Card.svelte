@@ -28,8 +28,12 @@
 	flex-1 bg-white p-4 text-center flex flex-col items-center
 	border-gray-400 border-solid border-4 rounded-[3rem]
 	${getWidth(index, totalCards)}
-	${isSet && isFirst ? 'border-b-0 rounded-b-none lg:rounded-r-none lg:border-r-0' : ''}
-	${isSet && isLast ? 'lg:rounded-l-none rounded-t-none' : ''}
+	${
+		isSet && isFirst
+			? 'border-b-0 rounded-b-none lg:rounded-r-none lg:border-r-0 lg:border-b-4 lg:rounded-bl-[3rem]'
+			: ''
+	}
+	${isSet && isLast ? 'rounded-t-none lg:rounded-l-none lg:rounded-tr-[3rem]' : ''}
 	${
 		isSet && !isFirst && !isLast
 			? 'rounded-b-none rounded-t-none lg:border-r-0 lg:rounded-r-none'
@@ -43,16 +47,24 @@
 			{icon}
 		</span>
 	</div>
-	<h2 class="text-lg font-bold mb-2">{title}</h2>
-	<p class="text-gray-600 mb-4">{description}</p>
+	<h2 class="text-2xl font-bold mb-2">{title}</h2>
+	<p class="text-gray-600 mb-4 text-center min-h-[80px] leading-relaxed">{description}</p>
 	{#each sections as section}
-		<div class="text-left mb-4">
+		<div class="text-center mb-4 w-full min-h-[135px]">
 			<h3 class="font-semibold text-purple-600 mb-1">{section.heading}</h3>
-			<ul class="list-disc list-inside text-gray-700">
-				{#each section.items as item}
-					<li>{item}</li>
-				{/each}
-			</ul>
+			{#if section.itemsInline}
+				<ul class="text-gray-700 list-none p-0 flex flex-wrap justify-center gap-3">
+					{#each section.itemsInline as item}
+						<li class="bg-gray-100 px-2 py-1 rounded-full">{item}</li>
+					{/each}
+				</ul>
+			{:else if section.items}
+				<ul class="text-gray-700 list-none p-0 space-y-2">
+					{#each section.items as item}
+						<li>{item}</li>
+					{/each}
+				</ul>
+			{/if}
 		</div>
 	{/each}
 </div>
