@@ -1,6 +1,6 @@
 <script>
-	export let width = 55; // Default width
-	export let height = 55; // Default height
+	export let width = 65; // Default width
+	export let height = 65; // Default height
 </script>
 
 <svg

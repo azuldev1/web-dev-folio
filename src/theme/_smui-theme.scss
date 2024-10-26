@@ -4,8 +4,9 @@
 
 // Svelte Colors! (Dark Theme)
 @use '@material/theme/index' as theme with (
-  $primary:  rgba(255, 255, 255, 0),
+  $primary:  #ffffff00,
   $on-primary: #68A6A6,
+  $on-primary-hover: #90d1d1,
   $secondary: #9373D9,
   $surface: #fff,
   $on-surface: #696969,
@@ -29,6 +30,7 @@ a:visited {
 :root {
   --primary: #{theme.$primary};
   --on-primary: #{theme.$on-primary};
+  --on-primary-hover: #{theme.$on-primary-hover};
   --secondary: #{theme.$secondary};
   --surface: #{theme.$surface};
   --on-surface: #{theme.$on-surface};

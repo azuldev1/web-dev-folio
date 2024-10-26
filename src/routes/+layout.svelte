@@ -1,33 +1,14 @@
 <script lang="ts">
-	import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
-	import IconButton from '@smui/icon-button';
-	import Weblogo from '$lib/components/SvgAzWeb.svelte';
+	import Navbar from '$lib/components/Navbar.svelte';
 	import '../styles/global.css';
 
-	let prominent = false;
+	let prominent = true;
 	let dense = false;
 </script>
 
 <div class="flexy">
 	<div class="top-app-bar-container flexor">
-		<TopAppBar class="transparent-bar" variant="static" {prominent} {dense}>
-			<Row>
-				<Section>
-					<Weblogo />
-				</Section>
-				<Section align="end" toolbar>
-					<IconButton class="my-colored-icon-button material-icons" aria-label="Download"
-						>file_download</IconButton
-					>
-					<IconButton class="material-icons my-colored-icon-button" aria-label="Print this page"
-						>print</IconButton
-					>
-					<IconButton class="material-icons my-colored-icon-button" aria-label="Bookmark this page"
-						>bookmark</IconButton
-					>
-				</Section>
-			</Row>
-		</TopAppBar>
+		<Navbar />
 	</div>
 	<div class="mt-1 mx-1 mt-2 md:mt-4.5 md:mx-3 lg:mx-4 lg:mt-5">
 		<slot />
