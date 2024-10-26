@@ -4,7 +4,7 @@
 	import ScreenSaver from '$lib/components/ScreenSaver.svelte';
 </script>
 
-<main class="bg-gradient-to-b from-purple-500 to-white min-h-screen p-8">
+<main class="bg-gradient-to-b from-purple-500 to-white min-h-screen">
 	<div class="container mx-auto">
 		<div class="mainContainer flex flex-col gap-y-12 lg:gap-y-16">
 			<!-- <ScreenSaver /> -->
@@ -19,12 +19,12 @@
 						Web<br class="hidden lg:inline" /> Developer
 					</h1>
 					<h1
-						class="mt-3 font-medium font-mono text-2xl lg:text-2xl xl:text-3xl leading-relaxed tracking-wider"
+						class="mt-3 font-semibold font-mono text-xl md:text-2xl xl:text-3xl leading-relaxed tracking-wider"
 					>
 						Manuel Alvarez-Zumárraga
 					</h1>
 					<p
-						class="mt-6 mb-0 text-xl lg:text-lg xl:text-2xl leading-relaxed tracking-wide text-gray-700"
+						class="mt-6 mb-0 text-lg lg:text-lg xl:text-2xl leading-relaxed tracking-wide text-gray-700"
 					>
 						<span class="font-bold text-lg lg:text-xl xl:text-2xl block mb-1 text-purple-400"
 							>Welcome to my coding space!</span
@@ -63,7 +63,6 @@
 	}
 	.text-content {
 		text-align: center;
-		padding: 0 2rem;
 	}
 
 	.shape-wrapper {

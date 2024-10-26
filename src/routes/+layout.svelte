@@ -29,14 +29,18 @@
 			</Row>
 		</TopAppBar>
 	</div>
-	<div class="flexor-content">
+	<div class="mt-1 mx-1 mt-2 md:mt-4.5 md:mx-3 lg:mx-4 lg:mt-5">
 		<slot />
 	</div>
+	<footer class="footer bg-gray-800 text-white">
+		<p>&copy; 2024 Manuel Alvarez-Zumárraga. All rights reserved.</p>
+	</footer>
 </div>
 
 <style>
 	:global(body) {
-		padding: 10px;
+		padding: 0;
+		margin: 0;
 		background-color: none !important;
 		/* diameter of the circle */
 		--d: 2px;
@@ -67,6 +71,7 @@
 	.flexy {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	.flexor {
@@ -76,7 +81,14 @@
 
 	.flexor-content {
 		flex-grow: 1;
-		margin: 18px 12px;
 		height: 100%;
+	}
+	.footer {
+		text-align: center;
+		padding: 10px;
+		margin-top: 10vh;
+		width: 100%;
+		position: relative;
+		bottom: 0;
 	}
 </style>

@@ -25,7 +25,7 @@
 
 <div
 	class={`
-	flex-1 bg-white p-4 text-center flex flex-col items-center
+	flex-1 bg-white pt-4 px-3 md:pt-12 md:px-8 text-center flex flex-col items-center
 	border-gray-400 border-solid border-4 rounded-[3rem]
 	${getWidth(index, totalCards)}
 	${
@@ -42,15 +42,19 @@
 	${isSet ? '' : 'w-full'}
 `}
 >
-	<div class="bg-teal-500 w-[5.2rem] h-[5.2rem] rounded-full mb-4 flex items-center justify-center">
-		<span class="material-icons text-5xl text-white">
+	<div
+		class="bg-teal-500 w-[4rem] h-[4rem] md:w-[5.2rem] md:h-[5.2rem] rounded-full mb-4 flex items-center justify-center"
+	>
+		<span class="material-icons text-3xl lg:text-5xl text-white">
 			{icon}
 		</span>
 	</div>
-	<h2 class="text-2xl font-bold mb-2">{title}</h2>
-	<p class="text-gray-600 mb-4 text-center min-h-[80px] leading-relaxed">{description}</p>
+	<h2 class="text-xl md:text-2xl font-bold mb-2">{title}</h2>
+	<p class="text-gray-600 mb-4 text-center md:min-h-[80px] leading-normal md:leading-relaxed">
+		{description}
+	</p>
 	{#each sections as section}
-		<div class="text-center mb-4 w-full min-h-[135px]">
+		<div class="text-center mb-4 w-full md:min-h-[135px]">
 			<h3 class="font-semibold text-purple-600 mb-1">{section.heading}</h3>
 			{#if section.itemsInline}
 				<ul class="text-gray-700 list-none p-0 flex flex-wrap justify-center gap-3">
@@ -59,7 +63,7 @@
 					{/each}
 				</ul>
 			{:else if section.items}
-				<ul class="text-gray-700 list-none p-0 space-y-2">
+				<ul class="text-gray-700 list-none p-0 space-y-1 md:space-y-2">
 					{#each section.items as item}
 						<li>{item}</li>
 					{/each}

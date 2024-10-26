@@ -31,7 +31,7 @@
 			]
 		},
 		{
-			icon: 'web',
+			icon: 'code',
 			title: 'Backend Skills & Tools',
 			description:
 				'Bridging front and backend: Delivering engaging front-end experiences with a deep understanding of REST APIs and GraphQL.',
