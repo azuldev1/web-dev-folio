@@ -25,7 +25,7 @@
 
 <div
 	class={`
-	flex-1 bg-white pt-4 px-3 md:pt-12 md:px-8 text-center flex flex-col items-center
+	flex-1 bg-white pt-4 px-3 md:pt-7 md:px-7 text-center flex flex-col items-center
 	border-gray-400 border-solid border-4 rounded-[3rem]
 	${getWidth(index, totalCards)}
 	${
@@ -43,9 +43,9 @@
 `}
 >
 	<div
-		class="bg-teal-500 w-[4rem] h-[4rem] md:w-[5.2rem] md:h-[5.2rem] rounded-full mb-4 flex items-center justify-center"
+		class="bg-on-primary w-[4rem] h-[4rem] md:w-[5rem] md:h-[5rem] rounded-full mb-4 flex items-center justify-center"
 	>
-		<span class="material-icons text-3xl lg:text-5xl text-white">
+		<span class="material-icons text-3xl md:text-4xl text-white">
 			{icon}
 		</span>
 	</div>
@@ -54,7 +54,7 @@
 		{description}
 	</p>
 	{#each sections as section}
-		<div class="text-center mb-4 w-full md:min-h-[135px]">
+		<div class="text-center mb-1 w-full md:min-h-[135px]">
 			<h3 class="font-semibold text-purple-600 mb-1">{section.heading}</h3>
 			{#if section.itemsInline}
 				<ul class="text-gray-700 list-none p-0 flex flex-wrap justify-center gap-3">

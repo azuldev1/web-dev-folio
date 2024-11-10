@@ -1,41 +1,49 @@
 <script>
 	import CardContainer from '$lib/components/CardContainer.svelte';
 	import SvgLaptop from '$lib/components/SvgLaptop.svelte';
+	import SVGArrow from '$lib/components/SVGArrow.svelte';
 	import ScreenSaver from '$lib/components/ScreenSaver.svelte';
+	import Fa from 'svelte-fa';
+	import { faToolbox } from '@fortawesome/free-solid-svg-icons';
 </script>
 
 <main class="bg-gradient-to-b from-purple-500 to-white min-h-screen">
 	<div class="container mx-auto">
-		<div class="mainContainer flex flex-col gap-y-12 lg:gap-y-16">
+		<div class="main-container flex flex-col gap-y-12 lg:gap-y-24">
 			<!-- <ScreenSaver /> -->
-			<div class="hero-section">
-				<div class="shape-wrapper">
-					<SvgLaptop />
-				</div>
-				<div class="text-content">
-					<h1
-						class="mb-0 font-semibold font-mono text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-wide"
-					>
-						Web<br class="hidden lg:inline" /> Developer
-					</h1>
-					<h1
-						class="mt-3 font-semibold font-mono text-xl md:text-2xl xl:text-3xl leading-relaxed tracking-wider"
-					>
-						Manuel Alvarez-Zumárraga
-					</h1>
-					<p
-						class="mt-6 mb-0 text-lg lg:text-lg xl:text-2xl leading-relaxed tracking-wide text-gray-700"
-					>
-						<span class="font-bold text-lg lg:text-xl xl:text-2xl block mb-1 text-purple-400"
-							>Welcome to my coding space!</span
+			<div class="content-section-main flex justify-between flex-col">
+				<div class="hero-section">
+					<div class="shape-wrapper">
+						<SvgLaptop />
+					</div>
+					<div class="text-content">
+						<h1
+							class="mb-0 font-semibold font-mono text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-wide"
 						>
-						I'm a developer who enjoys blending creativity with functionality. From sleek websites to
-						vibrant apps and engaging animations. Dive into the world of beautiful, functional design
-						with me, and let's create something extraordinary together!
-					</p>
+							Web<br class="hidden lg:inline" /> Developer
+						</h1>
+						<h1
+							class="mt-3 font-semibold font-mono text-xl md:text-2xl xl:text-3xl leading-relaxed tracking-wider"
+						>
+							Manuel Alvarez-Zumárraga
+						</h1>
+						<p
+							class="mt-6 mb-0 text-lg lg:text-lg xl:text-2xl leading-relaxed tracking-wide text-gray-700"
+						>
+							<span class="font-bold text-lg lg:text-xl xl:text-2xl block mb-1 text-purple-400"
+								>Welcome to my coding space!</span
+							>
+							I'm a developer who enjoys blending creativity with functionality. From sleek websites
+							to vibrant apps and engaging animations. Dive into the world of beautiful, functional design
+							with me, and let's create something extraordinary together!
+						</p>
+					</div>
+				</div>
+				<div class="arrow-container flex justify-center">
+					<SVGArrow scrollToId="cardSection" customClass="h-20 w-20 pb-4 animated-long-arrow" />
 				</div>
 			</div>
-			<div class="md:flex justify-center mt-10 md:mt-12 lg:mt-28">
+			<div id="cardSection" class="flex justify-center flex-col justify-center mt-10 h-screen">
 				<div class="container mx-auto max-w-3xl lg:max-w-5xl">
 					<CardContainer />
 				</div>
@@ -45,7 +53,11 @@
 </main>
 
 <style>
-	.mainContainer {
+	.content-section-main {
+		height: calc(100vh - 134px); /* theres padding on the navbar */
+	}
+
+	.main-container {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -59,7 +71,6 @@
 
 	.hero-section {
 		position: relative;
-		height: 100%;
 	}
 	.text-content {
 		text-align: center;

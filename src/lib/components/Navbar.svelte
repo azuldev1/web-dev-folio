@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import Weblogo from '$lib/components/SvgAzWeb.svelte';
-	import { faLinkedin, faCodepen, faGitlab } from '@fortawesome/free-brands-svg-icons';
+	import { faLinkedin, faCodepen, faGithub } from '@fortawesome/free-brands-svg-icons';
 	import Fa from 'svelte-fa';
 
 	let menuOpen = false;
@@ -33,9 +33,7 @@
 			</svg>
 		</button>
 		<div class="menu {menuOpen ? 'open' : ''}">
-			<a href="#">Home</a>
-			<a href="#">About</a>
-			<a href="#">Services</a>
+			<a href="#" class="self-center">About</a>
 			<a
 				href="https://www.linkedin.com/in/manuelalvarezzumarraga"
 				class="icon-link"
@@ -44,16 +42,11 @@
 			>
 				<Fa icon={faLinkedin} size="2x" class="icon" />
 			</a>
-			<a
-				href="https://codepen.io/azuldev1"
-				class="icon-link"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
+			<a href="https://codepen.io/azuldev1" target="_blank" rel="noopener noreferrer">
 				<Fa icon={faCodepen} size="2x" class="icon" />
 			</a>
-			<a href="https://gitlab.com" class="icon-link" target="_blank" rel="noopener noreferrer">
-				<Fa icon={faGitlab} size="2x" class="icon" />
+			<a href="https://github.com/azuldev1" target="_blank" rel="noopener noreferrer">
+				<Fa icon={faGithub} size="2x" class="icon" />
 			</a>
 		</div>
 	</div>
@@ -65,6 +58,7 @@
 	}
 	.container {
 		display: flex;
+		height: var(--navbar-height);
 		align-items: center;
 		justify-content: space-between;
 		color: var(--on-primary);
@@ -88,6 +82,7 @@
 		display: block; /* Tailwind utility for block */
 	}
 	a {
+		display: inline-block;
 		color: var(--on-primary);
 		transition: color 0.3s;
 	}
@@ -111,6 +106,8 @@
 	a {
 		color: var(--on-primary);
 		transition: color 0.3s;
+		text-decoration: none;
+		font-weight: 700;
 	}
 	a:hover {
 		color: var(--on-primary-hover); /* Tailwind utility for hover:text-blue-200 */

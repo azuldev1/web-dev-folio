@@ -10,7 +10,7 @@
 	<div class="top-app-bar-container flexor">
 		<Navbar />
 	</div>
-	<div class="mt-1 mx-1 mt-2 md:mt-4.5 md:mx-3 lg:mx-4 lg:mt-5">
+	<div class="mx-1 md:mt-4.5 md:mx-3 lg:mx-4">
 		<slot />
 	</div>
 	<footer class="footer bg-gray-800 text-white">
