@@ -6,7 +6,7 @@
 	let dense = false;
 </script>
 
-<div class="flexy">
+<div class="flex flex-col">
 	<div class="top-app-bar-container flexor">
 		<Navbar />
 	</div>
@@ -48,27 +48,9 @@
 			margin-right: 0;
 		}
 	}
-
-	.flexy {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-
-	.flexor {
-		display: inline-flex;
-		flex-direction: column;
-	}
-
-	.flexor-content {
-		flex-grow: 1;
-		height: 100%;
-	}
 	.footer {
 		text-align: center;
 		padding: 10px;
-		margin-top: 10vh;
-		width: 100%;
 		position: relative;
 		bottom: 0;
 	}

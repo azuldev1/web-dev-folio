@@ -7,11 +7,11 @@
 	import { faToolbox } from '@fortawesome/free-solid-svg-icons';
 </script>
 
-<main class="bg-gradient-to-b from-purple-500 to-white min-h-screen">
+<main class="bg-gradient-to-b from-purple-500 to-white">
 	<div class="container mx-auto">
-		<div class="main-container flex flex-col gap-y-12 lg:gap-y-24">
+		<div class="main-container flex flex-col">
 			<!-- <ScreenSaver /> -->
-			<div class="content-section-main flex justify-between flex-col">
+			<div class="lg:h-[calc(100vh-134px)] flex justify-between flex-col">
 				<div class="hero-section">
 					<div class="shape-wrapper">
 						<SvgLaptop />
@@ -28,7 +28,7 @@
 							Manuel Alvarez-Zumárraga
 						</h1>
 						<p
-							class="mt-6 mb-0 text-lg lg:text-lg xl:text-2xl leading-relaxed tracking-wide text-gray-700"
+							class="px-8 mt-6 mb-0 text-lg lg:px-2 lg:text-lg xl:text-2xl leading-relaxed tracking-wide text-gray-700"
 						>
 							<span class="font-bold text-lg lg:text-xl xl:text-2xl block mb-1 text-purple-400"
 								>Welcome to my coding space!</span
@@ -39,11 +39,11 @@
 						</p>
 					</div>
 				</div>
-				<div class="arrow-container flex justify-center">
-					<SVGArrow scrollToId="cardSection" customClass="h-20 w-20 pb-4 animated-long-arrow" />
+				<div class="hidden arrow-container md:flex justify-center">
+					<SVGArrow scrollToId="cardSection" customClass="h-20 w-20 pb-6 animated-arrow" />
 				</div>
 			</div>
-			<div id="cardSection" class="flex justify-center flex-col justify-center mt-10 h-screen">
+			<div id="cardSection" class="lg:h-[calc(100vh-71px)] flex flex-col justify-center">
 				<div class="container mx-auto max-w-3xl lg:max-w-5xl">
 					<CardContainer />
 				</div>
@@ -53,14 +53,9 @@
 </main>
 
 <style>
-	.content-section-main {
-		height: calc(100vh - 134px); /* theres padding on the navbar */
-	}
-
 	.main-container {
 		display: flex;
 		align-items: center;
-		justify-content: center;
 		height: 100%;
 	}
 
@@ -109,6 +104,7 @@
 		.text-content {
 			padding: 25px 10px 0 10px;
 			text-align: right;
+			max-width: 950px;
 		}
 	}
 	/* Halfway between lg and xl */
@@ -121,6 +117,7 @@
 		.text-content {
 			padding: 80px 15px 0 15px;
 			text-align: right;
+			max-width: 1000px;
 		}
 	}
 
@@ -133,9 +130,9 @@
 			width: 600px;
 		}
 		.text-content {
-			padding: 60px 15px 0 15px;
+			padding: 50px 15px 0 15px;
 			text-align: right;
-			max-width: 1200px;
+			max-width: 1050px;
 		}
 	}
 	/* Halfway between xl and 2xl */
@@ -144,12 +141,12 @@
 		.shape-wrapper {
 			display: inline-block;
 			shape-margin: 8%;
-			width: 700px;
+			width: 600px;
 		}
 		.text-content {
-			padding: 90px 40px 0 40px;
+			padding: 50px 40px 0 40px;
 			text-align: right;
-			max-width: 1250px;
+			max-width: 1150px;
 		}
 	}
 </style>

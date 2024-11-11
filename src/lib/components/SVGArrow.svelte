@@ -55,29 +55,35 @@
 </svg>
 
 <style>
-	.animated-long-arrow {
+	.arrow-up {
+		transform: rotate(180deg);
+	}
+	.animated-arrow {
 		animation: arrow-bounce 1.5s infinite ease-in-out;
 	}
 	/* Hover effects */
-	.animated-long-arrow:hover {
+	.animated-arrow:hover {
 		transform: scale(1.1);
 		cursor: pointer;
 	}
 
-	.animated-long-arrow:hover path {
+	.animated-arrow:hover path {
 		stroke-width: 1.2;
 	}
 	/* Update the hover state to work with the bounce animation */
-	.animated-long-arrow:hover {
-		--scale: 1.5;
+	.arrow-up:hover,
+	.arrow:hover,
+	.animated-arrow:hover {
+		opacity: 0.7;
 	}
+
 	@keyframes arrow-bounce {
 		0%,
 		100% {
 			transform: translateY(0);
 		}
 		50% {
-			transform: translateY(4vh); /* Use viewport height unit to make it responsive */
+			transform: translateY(2vh); /* Use viewport height unit to make it responsive */
 		}
 	}
 </style>
