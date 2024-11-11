@@ -7,11 +7,12 @@
 	import { faToolbox } from '@fortawesome/free-solid-svg-icons';
 </script>
 
-<main class="bg-gradient-to-b from-purple-500 to-white">
+<!-- there is a difference between md and lg in terms of layout -->
+<main class="bg-gradient-to-b from-purple-500 to-white pb-12 lg:pb-0">
 	<div class="container mx-auto">
-		<div class="main-container flex flex-col">
+		<div class="main-container flex flex-col gap-y-14 lg:gap-y-0">
 			<!-- <ScreenSaver /> -->
-			<div class="lg:h-[calc(100vh-134px)] flex justify-between flex-col">
+			<div class="px-2 md:px-12 lg:h-[calc(100vh-134px)] flex justify-between flex-col">
 				<div class="hero-section">
 					<div class="shape-wrapper">
 						<SvgLaptop />
@@ -39,11 +40,14 @@
 						</p>
 					</div>
 				</div>
-				<div class="hidden arrow-container md:flex justify-center">
+				<div class="hidden arrow-container lg:flex justify-center">
 					<SVGArrow scrollToId="cardSection" customClass="h-20 w-20 pb-6 animated-arrow" />
 				</div>
 			</div>
-			<div id="cardSection" class="lg:h-[calc(100vh-71px)] flex flex-col justify-center">
+			<div
+				id="cardSection"
+				class="px-2 md:px-12 lg:h-[calc(100vh-71px)] flex flex-col justify-center"
+			>
 				<div class="container mx-auto max-w-3xl lg:max-w-5xl">
 					<CardContainer />
 				</div>
