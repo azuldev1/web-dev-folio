@@ -18,11 +18,16 @@ export class MovableObject {
   }
 
   checkCollisionWith(otherObject: MovableObject): boolean {
-    const distance = this.mesh.position.distanceTo(otherObject.mesh.position);
-    const combinedRadius = 
-      (this.mesh.geometry as THREE.SphereGeometry).parameters.radius +
-      (otherObject.mesh.geometry as THREE.SphereGeometry).parameters.radius;
-    return distance < combinedRadius;
+    const thisGeometry = this.mesh.geometry as THREE.SphereGeometry;
+    const otherGeometry = otherObject.mesh.geometry as THREE.SphereGeometry;
+
+    if (thisGeometry.parameters && otherGeometry.parameters) {
+        const distance = this.mesh.position.distanceTo(otherObject.mesh.position);
+        const combinedRadius = thisGeometry.parameters.radius + otherGeometry.parameters.radius;
+        return distance < combinedRadius;
+    }
+
+    return false;
   }
 
   setRandomPosition(boxWidth: number, boxHeight: number, boxDepth: number): void {
@@ -38,9 +43,9 @@ export class MovableObject {
     this.mesh.position.add(this.velocity);
 
     // Update rotation
-    this.mesh.rotation.x += this.velocity.y * 0.05;
-    this.mesh.rotation.y += this.velocity.x * 0.05;
-    this.mesh.rotation.z += this.velocity.z * 0.05;
+    this.mesh.rotation.x += this.velocity.y * 0.02;
+    this.mesh.rotation.y += this.velocity.x * 0.02;
+    this.mesh.rotation.z += this.velocity.z * 0.02;
 
     // Collision detection and response
     const halfWidth = boxWidth / 2;

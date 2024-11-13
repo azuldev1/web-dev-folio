@@ -1,5 +1,8 @@
 import * as THREE from 'three';
 import { MovableObject } from "../../misc/MovableObject";
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+import {Wireframe} from 'three/addons/lines/Wireframe.js';
+import {WireframeGeometry2} from 'three/addons/lines/WireframeGeometry2.js'; 
 import { browser } from '$app/environment';
 
 // Variables
@@ -13,13 +16,34 @@ let boxDepth: number;
 
 // Function to update movable objects
 function updateMovableObjects(): void {
+    const collisionResponses: Map<MovableObject, THREE.Vector3> = new Map();
+
+    // Detect collisions and prepare responses
     movableShapes.forEach((shape, i) => {
         movableShapes.slice(i + 1).forEach(otherShape => {
             if (shape.checkCollisionWith(otherShape)) {
-                shape.velocity.multiplyScalar(-1);
-                otherShape.velocity.multiplyScalar(-1);
+                // Calculate response vectors
+                const response1 = shape.velocity.clone().multiplyScalar(-1);
+                const response2 = otherShape.velocity.clone().multiplyScalar(-1);
+
+                // Store responses, ensuring only one response per shape
+                if (!collisionResponses.has(shape)) {
+                    collisionResponses.set(shape, response1);
+                }
+                if (!collisionResponses.has(otherShape)) {
+                    collisionResponses.set(otherShape, response2);
+                }
             }
         });
+    });
+
+    // Apply collision responses
+    collisionResponses.forEach((response, shape) => {
+        shape.velocity.copy(response);
+    });
+
+    // Update all shapes
+    movableShapes.forEach(shape => {
         shape.update(boxWidth, boxHeight, boxDepth);
     });
 }
@@ -34,8 +58,8 @@ if (browser) {
     camera = new THREE.PerspectiveCamera(
         75,
         window.innerWidth / window.innerHeight,
-        0.1,
-        1000
+        .5,
+        300
     );
 
     // Set camera position
@@ -45,17 +69,22 @@ if (browser) {
     camera.position.z = boxDepth;
 
     // Shared shape vars
-    const velocity: THREE.Vector3 = new THREE.Vector3(0.3, 0.3, 0.3);
-    const material: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({
+    const velocity: THREE.Vector3 = new THREE.Vector3(0.2, 0.2, 0.2);
+    const material: LineMaterial = new LineMaterial({
         color: "rgb(104, 166, 166)",
-        wireframe: true
+        linewidth: .5, // in pixels
+        dashed: true,
+        dashSize: 5, // size of the dash
+        gapSize: 1, // size of the gap
+        resolution: new THREE.Vector2(window.innerWidth, window.innerHeight)
     });
 
     // Sphere setup
-    const sphereRadius: number = Math.min(window.innerWidth, window.innerHeight) * 0.03;
+    const sphereRadius: number = Math.min(window.innerWidth, window.innerHeight) * 0.05;
     const sphereGeometry: THREE.SphereGeometry = new THREE.SphereGeometry(sphereRadius, 16, 16);
+    const wireframeSphereGeometry: WireframeGeometry2 = new WireframeGeometry2(sphereGeometry);
     const sphere: MovableObject = new MovableObject(
-        sphereGeometry,
+        wireframeSphereGeometry,
         material,
         velocity,
         boxWidth,
@@ -64,10 +93,11 @@ if (browser) {
     );
     sphere.addToScene(scene);
 
-    // TorusKnot
-const torusKnotGeometry: THREE.TorusKnotGeometry = new THREE.TorusKnotGeometry(20, 3, 30, 16);
+// TorusKnot
+const torusKnotGeometry: THREE.TorusKnotGeometry = new THREE.TorusKnotGeometry(sphereRadius, 16, 18, 18, 1, 2);
+const wireframeTorusKnotGeometry: WireframeGeometry2 = new WireframeGeometry2(torusKnotGeometry);
 const torusKnot: MovableObject = new MovableObject(
-  torusKnotGeometry,
+  wireframeTorusKnotGeometry,
   material,
   velocity,
   boxWidth,
@@ -77,9 +107,10 @@ const torusKnot: MovableObject = new MovableObject(
 torusKnot.addToScene(scene);
 
 // Torus
-const torusGeometry: THREE.TorusGeometry = new THREE.TorusGeometry(15, 3, 8, 25);
+const torusGeometry: THREE.TorusGeometry = new THREE.TorusGeometry(25, 10, 8, 16);
+const wireframeTorusGeometry: WireframeGeometry2 = new WireframeGeometry2(torusGeometry);
 const torus: MovableObject = new MovableObject(
-  torusGeometry,
+  wireframeTorusGeometry,
   material,
   velocity,
   boxWidth,
@@ -88,19 +119,20 @@ const torus: MovableObject = new MovableObject(
 );
 torus.addToScene(scene);
 
-// Macaroni
-const macaroniGeometry: THREE.TorusGeometry = new THREE.TorusGeometry(12, 8, 16, 50);
-const macaroni: MovableObject = new MovableObject(
-  macaroniGeometry,
-  material,
-  velocity,
-  boxWidth,
-  boxHeight,
-  boxDepth
-);
-macaroni.addToScene(scene);
+// // Macaroni
+// const macaroniGeometry: THREE.TorusGeometry = new THREE.TorusGeometry(28, 10, 10, 16, 3.5);
+// const wireframeMacaroniGeometry: WireframeGeometry2 = new WireframeGeometry2(macaroniGeometry);
+// const macaroni: MovableObject = new MovableObject(
+//   wireframeMacaroniGeometry,
+//   material,
+//   velocity,
+//   boxWidth,
+//   boxHeight,
+//   boxDepth
+// );
+// macaroni.addToScene(scene);
 
-    movableShapes = [sphere , torusKnot, torus, macaroni ];
+    movableShapes = [sphere, torusKnot, torus];
 
 
     animate = function(): void {
@@ -127,6 +159,7 @@ export function onWindowResize(): void {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
+
 
         // Update the box dimensions
         boxWidth = window.innerWidth * 0.25;

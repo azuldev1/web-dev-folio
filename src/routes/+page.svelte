@@ -11,7 +11,7 @@
 <main class="bg-gradient-to-b from-purple-500 to-white pb-12 lg:pb-0">
 	<div class="container mx-auto">
 		<div class="main-container flex flex-col gap-y-14 lg:gap-y-0">
-			<!-- <ScreenSaver /> -->
+			<ScreenSaver />
 			<div class="px-2 md:px-12 lg:h-[calc(100vh-134px)] flex justify-between flex-col">
 				<div class="hero-section">
 					<div class="shape-wrapper">
