@@ -3,17 +3,23 @@
 	import Weblogo from '$lib/components/SvgAzWeb.svelte';
 	import { faLinkedin, faCodepen, faGithub } from '@fortawesome/free-brands-svg-icons';
 	import Fa from 'svelte-fa';
+	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 
 	let menuOpen = false;
 
 	function toggleMenu() {
 		menuOpen = !menuOpen;
 	}
+	function handleLogoClick() {
+		console.log('Logo clicked');
+		goto('/'); // Navigate to the homepage
+	}
 </script>
 
 <nav>
 	<div class="container mx-auto">
-		<div>
+		<div on:click={handleLogoClick}>
 			<Weblogo />
 		</div>
 		<button class="menu-toggle" on:click={toggleMenu}>
@@ -33,7 +39,7 @@
 			</svg>
 		</button>
 		<div class="menu {menuOpen ? 'open' : ''}">
-			<a href="#" class="self-center">About</a>
+			<a href="/about" class="self-center" class:active={$page.url.pathname === '/about'}>About</a>
 			<a
 				href="https://www.linkedin.com/in/manuelalvarezzumarraga"
 				class="icon-link"
@@ -53,6 +59,10 @@
 </nav>
 
 <style>
+	.active {
+		font-weight: bold;
+		color: var(--on-primary-hover); /* Adjust this color as needed */
+	}
 	nav {
 		padding: 1rem; /* Tailwind utility for p-4 */
 	}

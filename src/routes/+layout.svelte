@@ -6,11 +6,11 @@
 	let dense = false;
 </script>
 
-<div class="flex flex-col">
-	<div class="top-app-bar-container flexor">
+<div class="flex flex-col min-h-screen">
+	<div class="top-app-bar-container">
 		<Navbar />
 	</div>
-	<div class="mx-1 md:mt-4.5 md:mx-3 lg:mx-4">
+	<div class="mx-1 md:mt-4.5 md:mx-3 lg:mx-4 flex-grow">
 		<slot />
 	</div>
 	<footer class="footer bg-gray-800 text-white">
@@ -51,7 +51,6 @@
 	.footer {
 		text-align: center;
 		padding: 10px;
-		position: relative;
-		bottom: 0;
+		width: 100%;
 	}
 </style>
