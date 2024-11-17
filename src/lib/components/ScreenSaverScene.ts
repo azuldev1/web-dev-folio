@@ -14,6 +14,9 @@ let boxWidth: number;
 let boxHeight: number;
 let boxDepth: number;
 
+// Define a maximum velocity
+const MAX_VELOCITY = 1.0; // Adjust this value as needed
+
 // Function to update movable objects
 function updateMovableObjects(): void {
     const collisionResponses: Map<MovableObject, THREE.Vector3> = new Map();
@@ -44,6 +47,9 @@ function updateMovableObjects(): void {
 
     // Update all shapes
     movableShapes.forEach(shape => {
+        // Clamp the velocity
+        shape.velocity.clampLength(0, MAX_VELOCITY);
+
         shape.update(boxWidth, boxHeight, boxDepth);
     });
 }

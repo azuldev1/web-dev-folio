@@ -32,7 +32,7 @@
 							Manuel Alvarez-Zumárraga
 						</h1>
 						<p
-							class="px-8 mt-6 mb-0 text-lg lg:px-2 lg:text-lg xl:text-2xl leading-relaxed tracking-wide text-gray-700"
+							class="md:max-w-lg lg:max-w-full px-8 mt-6 mb-0 text-lg lg:px-2 lg:text-lg xl:text-2xl leading-relaxed tracking-wide text-gray-700"
 						>
 							<span class="font-bold text-lg lg:text-xl xl:text-2xl block mb-1 text-purple-400"
 								>Welcome to my coding space!</span

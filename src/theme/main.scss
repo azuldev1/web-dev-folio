@@ -1,7 +1,11 @@
 $on-primary-hover: #90d1d1;
-$on-primary-active: #4b8383;
+$on-primary-active: #234a4a;
+$on-surface: #696969;
+$on-surface-lighter: #F5F5DC;
 
 :root {
   --on-primary-hover: #{$on-primary-hover};
   --on-primary-active: #{$on-primary-active};
+  --on-surface: #{$on-surface};
+  --on-surface-lighter: #{$on-surface-lighter};
 }

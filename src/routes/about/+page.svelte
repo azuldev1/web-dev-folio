@@ -16,14 +16,14 @@
 		<!-- Text Section -->
 		<div class=" md:max-w-lg text-center lg:text-left px-8 lg:px-0">
 			<h1>About Me</h1>
-			<p class="text-lg lg:text-xl leading-relaxed tracking-wide">
-				I’m a web developer with a passion for lifelong learning, both in and out of my career. When
-				I’m not crafting intuitive web experiences, you’ll find me exploring new places, embracing
-				the adventure of travel, and discovering different cultures through food and experiences. I
-				also enjoy staying active with Brazilian Jiu-Jitsu and mountain biking, as well as
-				experimenting with cooking cuisines from around the world. These pursuits, along with taking
-				care of my family, inspire creativity, adaptability, and a constant drive to grow—qualities
-				that enhance both my personal and professional life.
+			<p
+				class="text-lg lg:text-xl leading-normal tracking-normal lg:leading-relaxed lg:tracking-wide"
+			>
+				I'm a web developer with a passion for lifelong learning. When I'm not building intuitive
+				web experiences, I enjoy staying active with Brazilian Jiu-Jitsu, mountain biking, and
+				experimenting with cooking cuisines from around the world. These pursuits push me to embrace
+				challenges, think creatively, and continuously improve—qualities that fuel both my personal
+				growth and professional development.
 			</p>
 		</div>
 	</div>
