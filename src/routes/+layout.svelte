@@ -10,7 +10,7 @@
 	<div class="top-app-bar-container">
 		<Navbar />
 	</div>
-	<div class="mx-1 md:mt-4.5 md:mx-3 lg:mx-4 flex-grow pt-8 md:pt-10">
+	<div class="mx-1 md:mt-4.5 md:mx-3 lg:mx-4 flex-grow pt-8 md:pt-10 pb-20">
 		<slot />
 	</div>
 	<footer class="footer bg-gray-800 text-white">

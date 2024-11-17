@@ -1,10 +1,14 @@
+@import '../theme/main.scss';
 @tailwind utilities;
 @tailwind spacing;
+
+
 
 
 :root {
   --navbar-height: 102px;
 }
+
 
 * {
   font-family: 'Montserrat', sans-serif;

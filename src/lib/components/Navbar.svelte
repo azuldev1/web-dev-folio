@@ -19,7 +19,13 @@
 
 <nav>
 	<div class="container mx-auto">
-		<div on:click={handleLogoClick}>
+		<div
+			role="button"
+			tabindex="0"
+			class="cursor-pointer"
+			on:click={handleLogoClick}
+			on:keydown={(e) => (e.key === 'Enter' || e.key === ' ' ? handleLogoClick() : null)}
+		>
 			<Weblogo />
 		</div>
 		<button class="menu-toggle" on:click={toggleMenu}>
@@ -61,7 +67,7 @@
 <style>
 	.active {
 		font-weight: bold;
-		color: var(--on-primary-hover); /* Adjust this color as needed */
+		color: var(--on-primary-active); /* Adjust this color as needed */
 	}
 	nav {
 		padding: 1rem; /* Tailwind utility for p-4 */

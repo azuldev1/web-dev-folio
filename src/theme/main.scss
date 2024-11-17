@@ -1,0 +1,7 @@
+$on-primary-hover: #90d1d1;
+$on-primary-active: #4b8383;
+
+:root {
+  --on-primary-hover: #{$on-primary-hover};
+  --on-primary-active: #{$on-primary-active};
+}

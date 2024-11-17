@@ -10,19 +10,12 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"prepare": "pnpm run smui-theme-light && pnpm run smui-theme-dark",
-		"smui-theme-light": "smui-theme compile static/smui.css -i src/theme -i ./node_modules",
-		"smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark -i ./node_modules"
+		"format": "prettier --write ."
 	},
 	"devDependencies": {
 		"@material/theme": "^14.0.0",
 		"@playwright/test": "^1.28.1",
-		"@smui/banner": "7.0.0-beta.15",
-		"@smui/button": "7.0.0-beta.15",
 		"@smui/common": "7.0.0-beta.16",
-		"@smui/icon-button": "7.0.0-beta.15",
-		"@smui/top-app-bar": "7.0.0-beta.15",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
@@ -35,7 +28,6 @@
 		"eslint-plugin-svelte": "^2.30.0",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
-		"smui-theme": "7.0.0-beta.15",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
 		"tslib": "^2.4.1",

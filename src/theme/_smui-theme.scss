@@ -9,9 +9,9 @@
   $secondary: #9373D9,
   $surface: #fff,
   $on-surface: #696969,
-  $background: #fff,
+  $background: #fff
 );
-  $on-primary-hover: #90d1d1;
+// Darker
 
 html,
 body {
@@ -23,14 +23,13 @@ a {
   color: #40b3ff;
 }
 a:visited {
-  color: color.scale(#40b3ff, $lightness: -35%);
+  color: $on-primary-active;
 }
 
 
 :root {
   --primary: #{theme.$primary};
   --on-primary: #{theme.$on-primary};
-  --on-primary-hover: #{$on-primary-hover};
   --secondary: #{theme.$secondary};
   --surface: #{theme.$surface};
   --on-surface: #{theme.$on-surface};

@@ -6,6 +6,7 @@
 <svg
 	id="Layer_2"
 	data-name="Layer 2"
+	class="hover-effect"
 	xmlns="http://www.w3.org/2000/svg"
 	{width}
 	{height}
@@ -41,6 +42,14 @@
 </svg>
 
 <style>
+	.hover-effect:hover .cls-1,
+	.hover-effect:hover .cls-2,
+	.hover-effect:hover .cls-3 {
+		stroke: var(--on-primary-hover); /* Light gray color */
+	}
+	.hover-effect:hover #chars path {
+		fill: var(--on-primary-hover); /* Light gray color */
+	}
 	.cls-3 {
 		fill: var(--on-primary);
 		stroke-width: 0px;
