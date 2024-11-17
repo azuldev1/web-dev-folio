@@ -1,15 +1,12 @@
-import adapter from '@sveltejs/adapter-static';
+import adapterStatic from '@sveltejs/adapter-static';
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
-	kit: {
-		adapter: adapter({
-			fallback: '404.html'
-		}),
-		paths: {
-			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
-		}
-	}
+const dev = process.env.NODE_ENV === 'development';
+
+export default {
+  kit: {
+    adapter: adapterStatic(),
+    paths: {
+      base: dev ? '' : '' // Leave base path empty for a root-level custom domain
+    }
+  }
 };
-
-export default config;
