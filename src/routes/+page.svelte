@@ -12,7 +12,10 @@
 	<div class="container mx-auto">
 		<div class="main-container flex flex-col gap-y-14 lg:gap-y-0">
 			<ScreenSaver />
-			<div class="px-2 md:px-12 lg:h-[calc(100vh-134px)] flex justify-between flex-col">
+
+			<!-- 134px is the height of the navbar -->
+			<!-- 25px height of the padding in the layout -->
+			<div class="px-2 md:px-12 lg:h-[calc(100vh-134px-25px)] flex justify-between flex-col">
 				<div class="hero-section">
 					<div class="shape-wrapper">
 						<SvgLaptop />

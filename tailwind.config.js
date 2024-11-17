@@ -7,6 +7,9 @@ export default {
         sans: ['Inter', 'sans-serif'],
         mono: ['Fira Code', 'monospace'],
       },
+      maxWidth: {
+        'xxs': '16rem', // Custom smaller size
+      },
       spacing: {
         '24': '6rem',
         '28': '7rem',
