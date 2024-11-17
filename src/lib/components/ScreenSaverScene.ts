@@ -15,7 +15,7 @@ let boxHeight: number;
 let boxDepth: number;
 
 // Define a maximum velocity
-const MAX_VELOCITY = 1.0; // Adjust this value as needed
+const MAX_VELOCITY = .5; // Adjust this value as needed
 
 // Function to update movable objects
 function updateMovableObjects(): void {
@@ -54,8 +54,31 @@ function updateMovableObjects(): void {
     });
 }
 
+let animationFrameId: number | null = null;
+
 // Animation function (to be initialized in client-side context)
-let animate: () => void;
+function animate(): void {
+    if (renderer) {
+        updateMovableObjects();
+        renderer.render(scene, camera);
+        animationFrameId = requestAnimationFrame(animate);
+    }
+}
+
+// Function to start the animation loop
+function startAnimation(): void {
+    if (!animationFrameId) {
+        animate();
+    }
+}
+
+// Function to stop the animation loop
+function stopAnimation(): void {
+    if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+    }
+}
 
 // Only execute if in the browser environment
 if (browser) {
@@ -99,55 +122,37 @@ if (browser) {
     );
     sphere.addToScene(scene);
 
-// TorusKnot
-const torusKnotGeometry: THREE.TorusKnotGeometry = new THREE.TorusKnotGeometry(sphereRadius, 16, 18, 18, 1, 2);
-const wireframeTorusKnotGeometry: WireframeGeometry2 = new WireframeGeometry2(torusKnotGeometry);
-const torusKnot: MovableObject = new MovableObject(
-  wireframeTorusKnotGeometry,
-  material,
-  velocity,
-  boxWidth,
-  boxHeight,
-  boxDepth
-);
-torusKnot.addToScene(scene);
+    // TorusKnot
+    const torusKnotGeometry: THREE.TorusKnotGeometry = new THREE.TorusKnotGeometry(sphereRadius, 16, 18, 18, 1, 2);
+    const wireframeTorusKnotGeometry: WireframeGeometry2 = new WireframeGeometry2(torusKnotGeometry);
+    const torusKnot: MovableObject = new MovableObject(
+        wireframeTorusKnotGeometry,
+        material,
+        velocity,
+        boxWidth,
+        boxHeight,
+        boxDepth
+    );
+    torusKnot.addToScene(scene);
 
-// Torus
-const torusGeometry: THREE.TorusGeometry = new THREE.TorusGeometry(25, 10, 8, 16);
-const wireframeTorusGeometry: WireframeGeometry2 = new WireframeGeometry2(torusGeometry);
-const torus: MovableObject = new MovableObject(
-  wireframeTorusGeometry,
-  material,
-  velocity,
-  boxWidth,
-  boxHeight,
-  boxDepth
-);
-torus.addToScene(scene);
-
-// // Macaroni
-// const macaroniGeometry: THREE.TorusGeometry = new THREE.TorusGeometry(28, 10, 10, 16, 3.5);
-// const wireframeMacaroniGeometry: WireframeGeometry2 = new WireframeGeometry2(macaroniGeometry);
-// const macaroni: MovableObject = new MovableObject(
-//   wireframeMacaroniGeometry,
-//   material,
-//   velocity,
-//   boxWidth,
-//   boxHeight,
-//   boxDepth
-// );
-// macaroni.addToScene(scene);
+    // Torus
+    const torusGeometry: THREE.TorusGeometry = new THREE.TorusGeometry(25, 10, 8, 16);
+    const wireframeTorusGeometry: WireframeGeometry2 = new WireframeGeometry2(torusGeometry);
+    const torus: MovableObject = new MovableObject(
+        wireframeTorusGeometry,
+        material,
+        velocity,
+        boxWidth,
+        boxHeight,
+        boxDepth
+    );
+    torus.addToScene(scene);
 
     movableShapes = [sphere, torusKnot, torus];
 
-
-    animate = function(): void {
-        if (renderer) {
-            requestAnimationFrame(animate);
-            updateMovableObjects();
-            renderer.render(scene, camera);
-        }
-    };
+    startAnimation();
+    // Call stopAnimation when navigating away from the page
+    window.addEventListener('beforeunload', stopAnimation);
 }
 
 // Function to create the scene
@@ -155,7 +160,7 @@ export function createScene(canvasElement: HTMLCanvasElement): void {
     if (browser) {
         renderer = new THREE.WebGLRenderer({ canvas: canvasElement, antialias: true, alpha: true });
         onWindowResize();
-        animate();
+        startAnimation();
     }
 }
 
@@ -165,7 +170,6 @@ export function onWindowResize(): void {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
-
 
         // Update the box dimensions
         boxWidth = window.innerWidth * 0.25;
