@@ -1,8 +1,9 @@
-<script lang="ts">
+<script>
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import { createScene, onWindowResize } from './ScreenSaverScene';
 
-	let sceneEl: HTMLCanvasElement;
+	let sceneEl = new HTMLCanvasElement();
 
 	onMount(() => {
 		createScene(sceneEl);
