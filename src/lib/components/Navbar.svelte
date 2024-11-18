@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import Weblogo from '$lib/components/SvgAzWeb.svelte';
 	import { faLinkedin, faCodepen, faGithub } from '@fortawesome/free-brands-svg-icons';
+	import { faFile } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
@@ -91,6 +92,10 @@
 			>
 				<span>GitHub</span>
 				<Fa icon={faGithub} size="2x" class="icon" />
+			</a>
+			<a class="icon-link" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+				<span>Resume</span>
+				<Fa icon={faFile} size="2x" class="icon" />
 			</a>
 		</div>
 	</div>
