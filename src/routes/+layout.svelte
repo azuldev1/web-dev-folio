@@ -4,6 +4,7 @@
 
 	let prominent = true;
 	let dense = false;
+	export const ssr = false;
 </script>
 
 <div class="flex flex-col min-h-screen">
