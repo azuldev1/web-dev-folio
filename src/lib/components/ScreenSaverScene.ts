@@ -15,7 +15,7 @@ let boxHeight: number;
 let boxDepth: number;
 
 // Define a maximum velocity
-const MAX_VELOCITY = .5; // Adjust this value as needed
+const MAX_VELOCITY = .6; // Adjust this value as needed
 
 // Function to update movable objects
 function updateMovableObjects(): void {
@@ -88,7 +88,7 @@ if (browser) {
         75,
         window.innerWidth / window.innerHeight,
         .5,
-        300
+        200
     );
 
     // Set camera position

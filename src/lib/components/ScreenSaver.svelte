@@ -5,11 +5,12 @@
 
 	let sceneEl: HTMLCanvasElement;
 
-	onMount(() => {
+	onMount((): (() => void) | void => {
 		if (browser) {
 			// Create a canvas element
 			sceneEl = document.createElement('canvas') as HTMLCanvasElement;
-
+			// Manually set the class
+			sceneEl.className = 'screen-saver';
 			// Append the canvas to the body or a specific container
 			document.body.appendChild(sceneEl);
 
@@ -28,15 +29,13 @@
 	});
 </script>
 
-<canvas id="scene" bind:this={sceneEl}></canvas>
+<canvas id="scene" class="screen-saver" bind:this={sceneEl}></canvas>
 
-<style>
-	#scene {
+<style global>
+	.screen-saver {
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: vw;
-		height: vh;
 		background: none;
 		z-index: -1;
 	}
