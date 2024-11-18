@@ -134,7 +134,7 @@
 	}
 	.menu.open a {
 		width: 100%;
-		padding: 2.25rem 1.2rem;
+		padding: 2.25rem 0;
 		justify-content: center;
 		background-color: var(--on-surface-lighter);
 	}

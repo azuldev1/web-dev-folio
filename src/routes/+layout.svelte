@@ -7,7 +7,7 @@
 	export const ssr = false;
 </script>
 
-<div class="flex flex-col min-h-screen">
+<div class="flex flex-col min-h-screen overflow-x-hidden">
 	<div class="top-app-bar-container">
 		<Navbar />
 	</div>
@@ -39,8 +39,8 @@
 		overflow: auto;
 	}
 	.top-app-bar-container {
-		width: 100%;
-		overflow: auto;
+		max-width: 100vw;
+		overflow: hidden;
 		display: inline-block;
 	}
 
