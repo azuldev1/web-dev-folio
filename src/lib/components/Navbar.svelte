@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import Weblogo from '$lib/components/SvgAzWeb.svelte';
 	import { faLinkedin, faCodepen, faGithub } from '@fortawesome/free-brands-svg-icons';
-	import { faFile } from '@fortawesome/free-solid-svg-icons';
+	import { faFile, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
@@ -15,6 +15,9 @@
 	function handleLogoClick() {
 		console.log('Logo clicked');
 		goto('/'); // Navigate to the homepage
+	}
+	function closeMenu() {
+		menuOpen = false;
 	}
 </script>
 
@@ -65,7 +68,16 @@
 			{/if}
 		</button>
 		<div class="menu {menuOpen ? 'open' : ''}">
-			<a href="/about" class:active={$page.url.pathname === '/about'}>About</a>
+			<a href="/about" class:active={$page.url.pathname === '/about'} on:click={closeMenu}>About</a>
+			<a
+				href="/contact"
+				class:active={$page.url.pathname === '/contact'}
+				class="icon-link"
+				on:click={closeMenu}
+			>
+				<span>Contact</span>
+				<Fa icon={faEnvelope} size="2x" class="icon" />
+			</a>
 			<a
 				href="https://www.linkedin.com/in/manuelalvarezzumarraga"
 				class="icon-link"
@@ -179,7 +191,6 @@
 		color: var(--on-primary-hover); /* Tailwind utility for hover:text-blue-200 */
 	}
 	:global(.icon) {
-		margin-left: 0.5rem;
 		transition:
 			background-color 0.3s,
 			transform 0.3s;

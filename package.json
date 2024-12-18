@@ -42,6 +42,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@emailjs/browser": "^4.4.1",
 		"@fortawesome/free-brands-svg-icons": "^6.6.0",
 		"@fortawesome/free-solid-svg-icons": "^6.6.0",
 		"@tailwindcss/typography": "^0.5.15",
