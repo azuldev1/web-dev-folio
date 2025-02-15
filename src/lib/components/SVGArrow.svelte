@@ -56,14 +56,16 @@
 
 <style>
 	.arrow-up {
-		transform: rotate(180deg);
+		transform: rotate(180deg) scale(0.75);
 	}
 	.animated-arrow {
 		animation: arrow-bounce 1.5s infinite ease-in-out;
 	}
 	/* Hover effects */
+	.arrow-up:hover {
+		cursor: pointer;
+	}
 	.animated-arrow:hover {
-		transform: scale(1.1);
 		cursor: pointer;
 	}
 

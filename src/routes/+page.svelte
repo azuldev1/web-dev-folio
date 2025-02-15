@@ -5,6 +5,12 @@
 	import ScreenSaver from '$lib/components/ScreenSaver.svelte';
 	import Fa from 'svelte-fa';
 	import { faToolbox } from '@fortawesome/free-solid-svg-icons';
+
+	// Add export let data; for SSG
+	export let data;
+
+	// Destructure the data
+	const { projects, posts } = data;
 </script>
 
 <!-- there is a difference between md and lg in terms of layout -->
@@ -15,7 +21,10 @@
 
 			<!-- 134px is the height of the nav -->
 			<!-- 25px height of the padding in the layout -->
-			<div class="px-2 md:px-12 lg:h-[calc(100vh-134px-25px)] flex justify-between flex-col">
+			<div
+				id="top"
+				class="px-2 md:px-12 lg:h-[calc(100vh-134px-25px)] flex justify-between flex-col"
+			>
 				<div class="hero-section">
 					<div class="shape-wrapper">
 						<SvgLaptop />
@@ -54,6 +63,70 @@
 				<div class="container mx-auto max-w-3xl lg:max-w-5xl">
 					<CardContainer />
 				</div>
+			</div>
+			<div class="hidden arrow-container lg:flex justify-center">
+				<SVGArrow scrollToId="projectsAndPosts" customClass="h-20 w-20 pb-6 animated-arrow" />
+			</div>
+
+			<!-- New Projects & Posts Section -->
+			<div id="projectsAndPosts" class="px-2 md:px-12 py-16">
+				<div class="container mx-auto max-w-3xl lg:max-w-5xl">
+					{#if projects.length > 0 || posts.length > 0}
+						<h2 class="text-3xl font-mono font-semibold mb-12 text-center">Projects & Posts</h2>
+
+						<!-- Projects Grid -->
+						{#if projects.length > 0}
+							<div class="mb-16">
+								<h3 class="text-2xl font-mono mb-6 text-purple-500">Latest Projects</h3>
+								<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+									{#each projects as project}
+										<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+											<img
+												src={project.image}
+												alt={project.title}
+												class="w-full h-48 object-cover"
+											/>
+											<div class="p-4">
+												<h4 class="font-semibold text-lg mb-2">{project.title}</h4>
+												<p class="text-gray-600 text-sm mb-4">{project.description}</p>
+												<a href={project.url} class="text-purple-500 hover:text-purple-700"
+													>View Project →</a
+												>
+											</div>
+										</div>
+									{/each}
+								</div>
+							</div>
+						{/if}
+
+						<!-- Blog Posts Grid -->
+						{#if posts.length > 0}
+							<div>
+								<h3 class="text-2xl font-mono mb-6 text-purple-500">Recent Posts</h3>
+								<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+									{#each posts as post}
+										<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+											<img src={post.image} alt={post.title} class="w-full h-48 object-cover" />
+											<div class="p-6">
+												<h4 class="font-semibold text-lg mt-2 mb-3">{post.title}</h4>
+												<p class="text-gray-600 mb-4">{post.excerpt}</p>
+												<div class="flex justify-between items-center">
+													<a href={post.url} class="text-purple-500 hover:text-purple-700"
+														>Read More →</a
+													>
+													<span class="text-sm text-gray-500">{post.date}</span>
+												</div>
+											</div>
+										</div>
+									{/each}
+								</div>
+							</div>
+						{/if}
+					{/if}
+				</div>
+			</div>
+			<div class="hidden arrow-container lg:flex justify-center mb-8">
+				<SVGArrow scrollToId="top" customClass="h-20 w-20 pb-6 arrow-up" />
 			</div>
 		</div>
 	</div>

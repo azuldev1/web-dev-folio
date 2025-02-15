@@ -1,8 +1,6 @@
 import adapter from '@sveltejs/adapter-static';
 import { sveltePreprocess } from 'svelte-preprocess';
 
-
-
 export default {
 	preprocess: sveltePreprocess({ ...sveltePreprocess() }),
 	kit: {
@@ -18,5 +16,5 @@ export default {
 		prerender: {
 			entries: ['*'] // Explicitly list routes
 		}
-	},
+	}
 };
