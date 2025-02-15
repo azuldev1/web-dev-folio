@@ -46,9 +46,11 @@
 							<span class="font-bold text-lg lg:text-xl xl:text-2xl block mb-1 text-purple-400"
 								>Welcome to my coding space!</span
 							>
-							I'm a developer who enjoys blending creativity with functionality. From sleek websites
-							to vibrant apps and engaging animations. Dive into the world of beautiful, functional design
-							with me, and let's create something extraordinary together!
+							I'm a full-stack developer with a front-end focus, passionate about crafting seamless digital
+							experiences. Whether it's building sleek, interactive interfaces, architecting a solid
+							SQL-backed system, or packaging an app with Docker, I bring creativity and functionality
+							together. I enjoy learning new technologies and staying up to date with best practices
+							to continuously refine my craft. Let’s build something extraordinary!
 						</p>
 					</div>
 				</div>
