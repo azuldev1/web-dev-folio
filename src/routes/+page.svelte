@@ -47,10 +47,9 @@
 								>Welcome to my coding space!</span
 							>
 							I'm a full-stack developer with a front-end focus, passionate about crafting seamless digital
-							experiences. Whether it's building sleek, interactive interfaces, architecting a solid
-							SQL-backed system, or packaging an app with Docker, I bring creativity and functionality
-							together. I enjoy learning new technologies and staying up to date with best practices
-							to continuously refine my craft.
+							experiences. From sleek interfaces to SQL-backed systems and Dockerized apps, I blend creativity
+							with functionality. I love learning new technologies and staying up to date with best practices
+							to refine my craft. Let’s build something extraordinary!
 						</p>
 					</div>
 				</div>
@@ -168,7 +167,7 @@
 			/* Upper-right */ 75% 15%,
 			/* Top-right */ 50% 5% /* Top-middle */
 		);
-		shape-margin: 6%;
+		shape-margin: 4%;
 		float: right;
 	}
 	.hero-section::after {
@@ -222,7 +221,7 @@
 		/* Styles for extra large devices and up */
 		.shape-wrapper {
 			display: inline-block;
-			shape-margin: 8%;
+			shape-margin: 9%;
 			width: 600px;
 		}
 		.text-content {
