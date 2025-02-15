@@ -50,7 +50,7 @@
 							experiences. Whether it's building sleek, interactive interfaces, architecting a solid
 							SQL-backed system, or packaging an app with Docker, I bring creativity and functionality
 							together. I enjoy learning new technologies and staying up to date with best practices
-							to continuously refine my craft. Let’s build something extraordinary!
+							to continuously refine my craft.
 						</p>
 					</div>
 				</div>
